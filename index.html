@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./dist/output.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <title>Belajar Frontand Web</title>
+</head>
+
+<body>
+  <header class="w-full h-max bg-slate-300 p-3 block">
+    <div class="h-full w-max flex justify-center items-center gap-2">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/768px-Facebook_f_logo_%282019%29.svg.png"
+        alt="" class="w-[40px] h-[40px]">
+      <h1 class="text-xl text-[##1278F3]">Facebook</h1>
+    </div>
+  </header>
+
+  <div class="flex justify-center pt-4 px-3 lg:px-0">
+    <div class="container flex gap-2">
+      <nav class="absolute top-[6px] -right-20 z-10 md:sticky h-full">
+        <label for="menu" class="text-[30px] w-[50px] p-2 border-2 border-black flex justify-center items-center rounded-md hover:bg-black duration-200 ease-linear hover:text-white bg-white">
+          <ion-icon name="grid-outline"></ion-icon>
+          <input type="checkbox" name="menu" id="menu" class="hidden">
+        </label>
+
+        <div class="flex flex-col overflow-hidden w-[150px] h-max menuList" id="menuList">
+          <div class="relative w-[50px] h-[30px] my-4">
+            <a href="#" class="text-[30px] p-2 border-2 border-black flex justify-center items-center rounded-md peer bg-white hover:bg-black hover:text-white duration-200 ease-linear shadow-[3px_3px] shadow-black hover:shadow-[0px_0px]">
+              <ion-icon name="home-outline"></ion-icon>
+            </a>
+            <span class="text-sm absolute right-[-65px] top-0 px-2 py-1 rounded-md bg-white border-2 border-black/30 opacity-0 peer-hover:opacity-100 duration-200 ease-in-out z-[10] hidden md:flex">Home</span>
+          </div>
+
+          <div class="relative w-[50px] h-[30px] my-4">
+            <a href="#" class="text-[30px] p-2 border-2 border-black flex justify-center items-center rounded-md peer bg-white hover:bg-black hover:text-white duration-200 ease-linear shadow-[3px_3px] shadow-black hover:shadow-[0px_0px]">
+              <ion-icon name="search-outline"></ion-icon>
+            </a>
+            <span class="text-sm absolute right-[-65px] top-0 px-2 py-1 rounded-md bg-white border-2 border-black/30 opacity-0 peer-hover:opacity-100 duration-200 ease-in-out z-[10] hidden md:flex">Search</span>
+          </div>
+        </div>
+      </nav>
+      <div class="relative left-0 md:left-[-65px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, nesciunt possimus. Harum, quaerat id commodi repudiandae culpa iure nihil alias placeat exercitationem sit non eveniet quas repellendus recusandae, vitae omnis totam nemo voluptatibus blanditiis quidem? Asperiores aperiam assumenda facere. Tenetur doloribus architecto labore placeat optio ut similique eveniet. Ratione sapiente harum ea maxime id obcaecati dignissimos ut nesciunt velit consequuntur quos ab illo dolor accusamus aspernatur incidunt facere minima ex consectetur, repellat officiis. Illo illum suscipit sint blanditiis iusto alias ratione error dolorem veniam ipsam tempore, magni perferendis corporis earum culpa. Asperiores, repellat non mollitia voluptates voluptate iure eaque distinctio?</div>
+    </div>
+  </div>
+
+  <script>
+    const menu = document.querySelector('#menu');
+    const menuList = document.querySelector('#menuList');
+
+    function toogleMenu () {
+      if(menu.checked){
+        menuList.classList.remove('menuList');
+        menuList.classList.add('menuListActive');
+      }else{
+        menuList.classList.remove('menuListActive');
+        menuList.classList.add('menuList');
+      }
+    }
+
+    menu.addEventListener('click', () => {
+      toogleMenu();
+    });
+
+    function getWidth () {
+      const width = window.innerWidth;
+      if(width >= 768){
+        menu.checked = true
+      } else {
+        menu.checked = false
+      }
+
+      toogleMenu()
+    }
+
+    getWidth();
+  </script>
+</body>
+
+</html>
